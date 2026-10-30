@@ -309,7 +309,7 @@ details p { margin-top: 8px; color: var(--ink-soft); }
         <div class="amount">7,90 €</div>
         <p>Menos de 0,27 € por dia de oração</p>
         <a class="btn" href="#comprar" data-buy>Começar ainda hoje</a>
-        <p class="hint">Garantia de 7 dias: se não for para ti, devolvemos o teu dinheiro.</p>
+        <p class="hint">Garantia de 7 dias: se não for para ti, devolvemos o teu dinheiro. Basta escreveres para <a href="mailto:apoio.armaduradamae@outlook.com">apoio.armaduradamae@outlook.com</a>.</p>
       </div>
 
       <section>
@@ -319,6 +319,7 @@ details p { margin-top: 8px; color: var(--ink-soft); }
           <details><summary>Serve para mais do que um filho?</summary><p>Sim. Rezas o mesmo dia por cada um, dizendo o nome de cada filho.</p></details>
           <details><summary>E se o meu filho já não vai à missa?</summary><p>É precisamente por ele que esta oração existe. Não precisa de saber. Tu rezas por ele.</p></details>
           <details><summary>Como recebo?</summary><p>Recebes o acesso no e-mail logo após o pagamento. Abre no telemóvel, no tablet ou no computador.</p></details>
+          <details><summary>E se o e-mail não chegar, ou eu quiser o dinheiro de volta?</summary><p>Vê primeiro a pasta de spam ou promoções. Se não estiver lá, ou se quiseres usar a garantia de 7 dias, escreve para <a href="mailto:apoio.armaduradamae@outlook.com">apoio.armaduradamae@outlook.com</a> com o e-mail que usaste na compra. Respondemos e resolvemos.</p></details>
         </div>
       </section>
 
@@ -356,10 +357,19 @@ const worries = {
 const answers = [];
 let i = 0;
 const $ = id => document.getElementById(id);
+// Rastros do funil: cada etapa dispara uma vez, para ver no Gestor de Eventos onde as pessoas saem.
+const MODO = location.hash === "#direto" ? "direto" : "quiz";
+const sent = {};
+function rastro(name) {
+  if (sent[name] || !window.fbq) return;
+  sent[name] = true;
+  fbq("trackCustom", name, { modo: MODO });
+}
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function render() {
   const s = steps[i];
+  rastro("Quiz_P" + (i + 1));
   $("kicker").textContent = "Pergunta " + (i + 1) + " de " + steps.length;
   $("question").textContent = s.q;
   $("back").hidden = i === 0;
@@ -401,6 +411,7 @@ $("nameForm").addEventListener("submit", e => {
   if (!n) return;
   n = n.charAt(0).toUpperCase() + n.slice(1);
   answers[i] = n;
+  rastro("Quiz_Fim");
   prepare(n);
 });
 
@@ -435,6 +446,7 @@ function reveal() {
   if (revealed) return;
   revealed = true;
   fbq("track", "ViewContent");
+  rastro("Botao_Visivel");
   $("wait").hidden = true;
   ["heroBuy", "after", "buybar"].forEach(id => { $(id).hidden = false; $(id).classList.add("reveal"); });
 }
@@ -465,7 +477,16 @@ document.addEventListener("click", e => {
 const vsl = document.getElementById("vsl");
 document.getElementById("unmute").addEventListener("click", e => {
   vsl.currentTime = 0; vsl.muted = false; vsl.play(); e.currentTarget.hidden = true;
+  rastro("VSL_Som");
 });
+// Retenção da VSL (com som): 10 s, 25%, 50%, 75% e fim.
+vsl.addEventListener("timeupdate", () => {
+  if (vsl.muted || !vsl.duration) return;
+  const t = vsl.currentTime, d = vsl.duration;
+  if (t >= 10) rastro("VSL_10s");
+  [25, 50, 75].forEach(p => { if (t >= d * p / 100) rastro("VSL_" + p); });
+});
+vsl.addEventListener("ended", () => { if (!vsl.muted) rastro("VSL_Fim"); });
 // Sem pausa: tocar no vídeo não pára, e se o browser o pausar (outra aba, chamada) retoma ao voltar.
 vsl.addEventListener("click", e => e.preventDefault());
 vsl.addEventListener("contextmenu", e => e.preventDefault());
@@ -473,6 +494,7 @@ vsl.addEventListener("pause", () => { if (!vsl.ended && !document.hidden) vsl.pl
 document.addEventListener("visibilitychange", () => { if (!document.hidden && !vsl.ended) vsl.play().catch(() => {}); });
 
 // Conjunto B da campanha: o link com #direto salta o quiz.
+rastro("Pagina_" + MODO);
 if (location.hash === "#direto") { showResult(""); } else { document.body.classList.add("night"); render(); }
 </script>
 
