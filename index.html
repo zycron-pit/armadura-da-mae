@@ -2,8 +2,24 @@
 <html lang="pt-PT">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>A Armadura da Mãe</title>
+<title>A Armadura da Mãe · 30 dias de oração pelo teu filho</title>
+<meta name="description" content="Um guia de 30 dias de oração para trazer o teu filho de volta para Jesus. Uma oração por dia, 5 minutos, no teu telemóvel.">
+<link rel="canonical" href="https://zycron-pit.github.io/armadura-da-mae/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:title" content="A Armadura da Mãe · 30 dias de oração pelo teu filho">
+<meta property="og:description" content="Um guia de 30 dias de oração para trazer o teu filho de volta para Jesus. Uma oração por dia, 5 minutos, no teu telemóvel.">
+<meta property="og:url" content="https://zycron-pit.github.io/armadura-da-mae/">
+<meta property="og:image" content="https://zycron-pit.github.io/armadura-da-mae/vsl-capa.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#121735">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23121735'/%3E%3Cpath d='M14 5h4v7h7v4h-7v11h-4V16H7v-4h7z' fill='%23c39a45'/%3E%3C/svg%3E">
 <meta name="claude:viewport-fit-sides" content="cover">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '5651787265046767');
+fbq('track', 'PageView');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
@@ -136,6 +152,7 @@ p { margin: 0; }
 }
 .vsl-live { padding:0; border:0; position:relative; overflow:hidden; background:#000; }
 .vsl-live video { width:100%; height:100%; object-fit:cover; display:block; }
+.vsl-live video::-webkit-media-controls { display:none !important; }
 .unmute { position:absolute; inset:auto 12px 12px 12px; padding:14px; border:0; border-radius:10px; background:var(--gold); color:#141c33; font:600 17px/1.2 var(--font-body, sans-serif); cursor:pointer; }
 .vsl strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: 22px; color: var(--on-night); }
 .body { display: grid; gap: 36px; padding-block: 34px 130px; }
@@ -242,7 +259,7 @@ details p { margin-top: 8px; color: var(--ink-soft); }
         <p id="resSub">30 dias de oração pelo teu filho, pelo nome, 5 minutos por manhã.</p>
       </div>
       <div class="vsl vsl-live">
-        <video id="vsl" src="VSL-armadura-leve.mp4" poster="vsl-capa.jpg" playsinline muted autoplay preload="auto"></video>
+        <video id="vsl" src="VSL-armadura-leve.mp4" poster="vsl-capa.jpg" playsinline muted autoplay preload="auto" disablepictureinpicture controlslist="nodownload nofullscreen noplaybackrate noremoteplayback"></video>
         <button type="button" class="unmute" id="unmute">🔊 Toca para ouvir</button>
       </div>
       <p class="wait" id="wait">O botão aparece no fim do vídeo. Vê até ao fim.</p>
@@ -417,6 +434,7 @@ let revealed = false;
 function reveal() {
   if (revealed) return;
   revealed = true;
+  fbq("track", "ViewContent");
   $("wait").hidden = true;
   ["heroBuy", "after", "buybar"].forEach(id => { $(id).hidden = false; $(id).classList.add("reveal"); });
 }
@@ -435,6 +453,7 @@ function startReveal() {
 document.addEventListener("click", e => {
   const a = e.target.closest("[data-buy]");
   if (!a) return;
+  fbq("trackCustom", "CliqueCheckout");
   if (CHECKOUT_URL) { a.href = CHECKOUT_URL; a.target = "_blank"; return; }
   e.preventDefault();
   $("toast").textContent = "Aqui entra o link do checkout Cartpanda.";
@@ -447,7 +466,11 @@ const vsl = document.getElementById("vsl");
 document.getElementById("unmute").addEventListener("click", e => {
   vsl.currentTime = 0; vsl.muted = false; vsl.play(); e.currentTarget.hidden = true;
 });
-vsl.addEventListener("click", () => { if (!vsl.muted) { vsl.paused ? vsl.play() : vsl.pause(); } });
+// Sem pausa: tocar no vídeo não pára, e se o browser o pausar (outra aba, chamada) retoma ao voltar.
+vsl.addEventListener("click", e => e.preventDefault());
+vsl.addEventListener("contextmenu", e => e.preventDefault());
+vsl.addEventListener("pause", () => { if (!vsl.ended && !document.hidden) vsl.play().catch(() => {}); });
+document.addEventListener("visibilitychange", () => { if (!document.hidden && !vsl.ended) vsl.play().catch(() => {}); });
 
 // Conjunto B da campanha: o link com #direto salta o quiz.
 if (location.hash === "#direto") { showResult(""); } else { document.body.classList.add("night"); render(); }
