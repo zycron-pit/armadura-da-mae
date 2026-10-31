@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Armadura da Mãe · 30 dias de oração pelo seu filho</title>
+<meta name="description" content="Um guia de 30 dias de oração para trazer seu filho de volta para Jesus. Uma oração por dia, 5 minutos, no seu celular.">
+<link rel="canonical" href="https://armadura-da-mae.shardweb.app/br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="A Armadura da Mãe · 30 dias de oração pelo seu filho">
+<meta property="og:description" content="Um guia de 30 dias de oração para trazer seu filho de volta para Jesus. Uma oração por dia, 5 minutos, no seu celular.">
+<meta property="og:url" content="https://armadura-da-mae.shardweb.app/br/">
+<meta property="og:image" content="https://armadura-da-mae.shardweb.app/vsl-capa.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#121735">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23121735'/%3E%3Cpath d='M14 5h4v7h7v4h-7v11h-4V16H7v-4h7z' fill='%23c39a45'/%3E%3C/svg%3E">
+<meta name="claude:viewport-fit-sides" content="cover">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '5651787265046767');
+fbq('track', 'PageView');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: o quiz acontece num "palco" azul-noite à luz de vela; o resultado abre com a mesma faixa escura (título + VSL) e segue em folha clara, numa coluna de celular. */
+:root {
+  --paper: #f6f7fb;
+  --sheet: #ffffff;
+  --ink: #1b2140;
+  --ink-soft: #586079;
+  --line: #dde1ee;
+  --gold: #c39a45;
+  --gold-deep: #9c7426;
+  --gold-soft: #f2ead8;
+  --night: #121735;
+  --night-2: #1b2250;
+  --on-night: #f3efe4;
+  --on-night-soft: #b7bbd6;
+  --night-line: rgba(195, 154, 69, .35);
+  --font-display: "Marcellus", "Times New Roman", serif;
+  --font-body: "Source Sans 3", "Segoe UI", Roboto, Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #10132a; --sheet: #191d3a; --ink: #eceefa; --ink-soft: #a7acc9;
+    --line: #2c3256; --gold-soft: #2a2720; --gold-deep: #d9b064;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #10132a; --sheet: #191d3a; --ink: #eceefa; --ink-soft: #a7acc9;
+  --line: #2c3256; --gold-soft: #2a2720; --gold-deep: #d9b064;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink); font-family: var(--font-body);
+  font-size: 17px; line-height: 1.55; min-height: 100%;
+}
+body.night { background: var(--night); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; text-wrap: balance; margin: 0; line-height: 1.2; }
+p { margin: 0; }
+.wrap { max-width: 460px; margin: 0 auto; }
+.gutter {
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Palco do quiz */
+.stage {
+  min-height: 100vh; color: var(--on-night);
+  background:
+    radial-gradient(120% 60% at 50% -10%, rgba(195, 154, 69, .22), transparent 60%),
+    linear-gradient(180deg, var(--night-2), var(--night) 55%);
+  padding-block: 18px 40px;
+}
+.brand { display: grid; justify-items: center; gap: 6px; }
+.brand svg { width: 18px; height: 26px; color: var(--gold); }
+.brand span { font-family: var(--font-display); font-size: 15px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+.rule { height: 1px; background: linear-gradient(90deg, transparent, var(--night-line), transparent); margin: 16px 0 22px; }
+.topline { display: flex; justify-content: space-between; align-items: center; min-height: 28px; }
+.back { font: inherit; font-size: 15px; color: var(--on-night-soft); background: none; border: 0; padding: 4px 0; cursor: pointer; }
+.back:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.steps { display: flex; gap: 6px; }
+.steps i { width: 26px; height: 3px; border-radius: 2px; background: rgba(243, 239, 228, .18); }
+.steps i.on { background: var(--gold); }
+.panel { display: grid; gap: 22px; margin-top: 22px; transition: opacity .22s ease, transform .22s ease; }
+.panel.out { opacity: 0; transform: translateY(6px); }
+.kicker { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--on-night-soft); text-align: center; }
+.q { font-size: 27px; text-align: center; color: var(--on-night); }
+.options { display: grid; gap: 10px; }
+.opt {
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  font: inherit; font-size: 17px; text-align: left; color: var(--on-night);
+  background: rgba(255, 255, 255, .04); border: 1px solid var(--night-line); border-radius: 10px;
+  padding: 15px 16px; min-height: 56px; cursor: pointer;
+  transition: background .15s ease, border-color .15s ease;
+}
+.opt .dot { flex: none; width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--gold); display: grid; place-items: center; }
+.opt .dot::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); transform: scale(0); transition: transform .15s ease; }
+.opt:hover { background: rgba(195, 154, 69, .08); }
+.opt:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.opt.picked { background: rgba(195, 154, 69, .16); border-color: var(--gold); }
+.opt.picked .dot::after { transform: scale(1); }
+.name-field { display: grid; gap: 12px; }
+.name-field label { font-size: 15px; color: var(--on-night-soft); text-align: center; }
+.name-field input {
+  font-family: var(--font-display); font-size: 24px; text-align: center; color: var(--on-night);
+  background: transparent; border: 0; border-bottom: 1.5px solid var(--gold); border-radius: 0;
+  padding: 10px 6px; width: 100%;
+}
+.name-field input::placeholder { color: rgba(243, 239, 228, .35); }
+.name-field input:focus-visible { outline: none; border-bottom-width: 2.5px; }
+.note { font-size: 13px; color: var(--on-night-soft); text-align: center; margin-top: 26px; }
+
+.btn {
+  display: block; width: 100%; font: inherit; font-weight: 700; font-size: 18px;
+  background: var(--gold); color: #1a1407; border: 0; border-radius: 10px;
+  padding: 16px; cursor: pointer; text-align: center; text-decoration: none;
+  box-shadow: 0 8px 22px -12px rgba(195, 154, 69, .9);
+}
+.btn:focus-visible { outline: 3px solid var(--on-night); outline-offset: 2px; }
+.btn:disabled { opacity: .45; box-shadow: none; cursor: default; }
+
+/* Tela de preparação */
+.prep { display: grid; justify-items: center; gap: 22px; margin-top: 40px; text-align: center; }
+.flame {
+  width: 120px; height: 120px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 214, 140, .9) 0 8%, rgba(195, 154, 69, .45) 22%, transparent 66%);
+  animation: glow 1.6s ease-in-out infinite;
+}
+@keyframes glow { 50% { transform: scale(1.08); opacity: .8; } }
+.prep h1 { font-size: 26px; color: var(--on-night); }
+.ticks { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; text-align: left; width: 100%; max-width: 330px; }
+.ticks li { display: flex; gap: 12px; align-items: center; color: var(--on-night-soft); opacity: .35; transition: opacity .3s ease, color .3s ease; }
+.ticks li.done { opacity: 1; color: var(--on-night); }
+.ticks li::before { content: ""; flex: none; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--gold); }
+.ticks li.done::before { background: var(--gold); box-shadow: inset 0 0 0 3px var(--night); }
+
+/* Resultado */
+.hero-band { background: linear-gradient(180deg, var(--night-2), var(--night)); color: var(--on-night); padding-block: 18px 30px; }
+.hero { display: grid; gap: 12px; text-align: center; margin-top: 18px; }
+.eyebrow { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.hero h1 { font-size: 31px; color: var(--on-night); }
+.hero p { color: var(--on-night-soft); }
+.vsl {
+  aspect-ratio: 9 / 16; width: 100%; max-width: 100%; margin: 22px 0 18px;
+  border: 1.5px dashed var(--gold); border-radius: 12px; background: rgba(255, 255, 255, .03);
+  display: grid; place-items: center; text-align: center; padding: 20px; color: var(--on-night-soft);
+}
+.vsl-live { padding:0; border:0; position:relative; overflow:hidden; background:#000; }
+.vsl-live video { width:100%; height:100%; object-fit:cover; display:block; }
+.vsl-live video::-webkit-media-controls { display:none !important; }
+.unmute { position:absolute; inset:auto 12px 12px 12px; padding:14px; border:0; border-radius:10px; background:var(--gold); color:#141c33; font:600 17px/1.2 var(--font-body, sans-serif); cursor:pointer; }
+.vsl strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: 22px; color: var(--on-night); }
+.body { display: grid; gap: 36px; padding-block: 34px 130px; }
+section { display: grid; gap: 14px; }
+section h2 { font-size: 25px; }
+.pains { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.pains li { padding-left: 22px; position: relative; }
+.pains li::before { content: "†"; position: absolute; left: 2px; color: var(--gold-deep); font-family: var(--font-display); }
+.gets { display: grid; border-top: 1px solid var(--line); }
+.gets div { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.gets b { font-weight: 600; }
+.gets span { color: var(--ink-soft); font-size: 15px; }
+.hint { font-size: 14px; color: var(--ink-soft); }
+.leaf {
+  background: var(--sheet); border: 1px solid var(--line); border-top: 3px solid var(--gold);
+  padding: 22px 20px 24px; display: grid; gap: 12px;
+  box-shadow: 0 14px 30px -22px rgba(18, 23, 53, .7);
+}
+.leaf .day { display: flex; justify-content: space-between; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-deep); }
+.leaf h3 { font-size: 24px; }
+.leaf blockquote { margin: 0; font-style: italic; color: var(--ink-soft); }
+.leaf .write { font-family: var(--font-display); font-size: 20px; border-bottom: 1px solid var(--ink-soft); min-height: 32px; padding-bottom: 2px; }
+.leaf .label { font-size: 13px; color: var(--ink-soft); }
+.price { background: var(--night); color: var(--on-night); border-radius: 14px; padding: 28px 20px; display: grid; gap: 10px; text-align: center; }
+.price .amount { font-family: var(--font-display); font-size: 50px; line-height: 1; font-variant-numeric: tabular-nums; }
+.price p { color: var(--on-night-soft); font-size: 15px; }
+.todo { font-size: 13px; border: 1px dashed var(--gold); border-radius: 8px; padding: 8px 10px; }
+.faq { display: grid; gap: 10px; }
+details { background: var(--sheet); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+summary { cursor: pointer; font-weight: 600; }
+details p { margin-top: 8px; color: var(--ink-soft); }
+[hidden] { display: none !important; }
+.wait { margin: 0; text-align: center; font-size: 15px; color: var(--on-night-soft); }
+.wait::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: var(--gold); vertical-align: middle; animation: glow 1.6s ease-in-out infinite; }
+.reveal { animation: rise .5s ease-out both; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+.toast { font-size: 14px; text-align: center; color: var(--ink-soft); }
+.buybar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 5;
+  background: var(--sheet); border-top: 1px solid var(--line);
+  padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+}
+.buybar .inner { max-width: 460px; margin: 0 auto; display: flex; gap: 12px; align-items: center; }
+.buybar .inner > div { min-width: 0; font-size: 14px; line-height: 1.3; color: var(--ink-soft); }
+.buybar .inner > div b { display: block; color: var(--ink); font-size: 16px; }
+.buybar .btn { width: auto; flex: 1; padding: 14px 10px; font-size: 17px; }
+@media (prefers-reduced-motion: reduce) {
+  .panel, .opt, .opt .dot::after, .ticks li { transition: none; }
+  .flame { animation: none; }
+}
+</style>
+
+<!-- QUIZ -->
+<div class="stage gutter" id="quiz">
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 22 30" aria-hidden="true"><path fill="currentColor" d="M9 0h4v8h9v4h-9v18H9V12H0V8h9z"/></svg>
+      <span>A Armadura da Mãe</span>
+    </div>
+    <div class="rule"></div>
+
+    <div id="ask">
+      <div class="topline">
+        <button class="back" id="back" type="button" hidden>‹ Voltar</button>
+        <span></span>
+        <div class="steps" id="steps" aria-hidden="true"></div>
+      </div>
+      <div class="panel" id="panel">
+        <p class="kicker" id="kicker">Pergunta 1 de 5</p>
+        <h1 class="q" id="question">Por quantos filhos você reza?</h1>
+        <div class="options" id="options"></div>
+        <form class="name-field" id="nameForm" hidden>
+          <label for="childName">Vamos colocar o nome dele no Dia 1 do seu guia.</label>
+          <input id="childName" name="childName" autocomplete="off" maxlength="30" placeholder="Digite o nome">
+          <button class="btn" type="submit" id="nameBtn" disabled>Preparar o meu guia</button>
+        </form>
+      </div>
+      <p class="note">Leva menos de um minuto. As respostas não ficam salvas.</p>
+    </div>
+
+    <div class="prep" id="prep" hidden>
+      <div class="flame" aria-hidden="true"></div>
+      <h1 id="prepTitle">Preparando a Armadura</h1>
+      <ul class="ticks">
+        <li id="t1">Escolhendo os versículos para o que tira a sua paz</li>
+        <li id="t2">Colocando o nome no Dia 1 do guia</li>
+        <li id="t3">Incluindo a oração a São Miguel Arcanjo</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTADO -->
+<div id="result" hidden>
+  <div class="hero-band gutter">
+    <div class="wrap">
+      <div class="brand">
+        <svg viewBox="0 0 22 30" aria-hidden="true"><path fill="currentColor" d="M9 0h4v8h9v4h-9v18H9V12H0V8h9z"/></svg>
+        <span>A Armadura da Mãe</span>
+      </div>
+      <div class="hero">
+        <p class="eyebrow">Guia de 30 dias · no seu celular</p>
+        <h1 id="resTitle">O guia para trazer seu filho de volta para Jesus está pronto</h1>
+        <p id="resSub">30 dias de oração pelo seu filho, pelo nome, 5 minutos por manhã.</p>
+      </div>
+      <div class="vsl vsl-live">
+        <video id="vsl" src="vsl-br.mp4" poster="../vsl-capa.jpg" playsinline muted autoplay preload="auto" disablepictureinpicture controlslist="nodownload nofullscreen noplaybackrate noremoteplayback"></video>
+        <button type="button" class="unmute" id="unmute">🔊 Toque para ouvir</button>
+      </div>
+      <p class="wait" id="wait">O botão aparece no fim do vídeo. Assista até o final.</p>
+      <a class="btn" href="#comprar" data-buy id="heroBuy" hidden>Começar ainda hoje · R$ 19,90</a>
+    </div>
+  </div>
+
+  <div class="gutter" id="after" hidden>
+    <div class="wrap body">
+      <section>
+        <h2>Para a mãe que reza</h2>
+        <ul class="pains">
+          <li>Que vê o filho se afastar de Deus e já não sabe o que dizer.</li>
+          <li>Que falou, insistiu e chorou às escondidas, e nada mudou.</li>
+          <li>Que fica com o coração apertado toda vez que a porta fecha.</li>
+          <li>Que quer rezar por ele todos os dias, mas não sabe por onde começar.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Um dia de cada vez, no seu celular</h2>
+        <p>Ele pode não ouvir você. Deus ouve você sempre. Toda manhã você abre o dia no celular e já está tudo pronto: o nome dele, a passagem da Bíblia, a oração palavra por palavra e um gesto simples para você se aproximar dele sem brigar. São 5 minutos.</p>
+        <div class="leaf" aria-label="Amostra do Dia 1 do guia">
+          <div class="day"><span>Dia 1</span><span>Entregar</span></div>
+          <h3>Senhor, hoje eu Te entrego</h3>
+          <div class="write" id="leafName">&nbsp;</div>
+          <blockquote>"Lança sobre o Senhor os teus cuidados, e Ele te susterá." Salmo 55,23</blockquote>
+          <p>Senhor Jesus, Tu conheces o caminho que ele vai fazer hoje, as pessoas que vai encontrar e o que ele traz no coração. Guarda-o onde eu não posso estar. Amém.</p>
+          <p class="label">Gesto do dia:</p>
+          <p>Hoje não fale de Deus com ele. Pergunte só como foi o dia dele, e escute até o fim.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>O que você recebe</h2>
+        <div class="gets">
+          <div><b>30 dias de oração, com o nome dele em cada um</b><span>guia</span></div>
+          <div><b>A passagem da Bíblia certa para cada dia</b><span>guia</span></div>
+          <div><b>Um gesto por dia para se aproximar sem brigar</b><span>guia</span></div>
+          <div><b>Oração a São Miguel Arcanjo pela proteção dele</b><span>dia 15</span></div>
+        </div>
+        <p class="hint">Você recebe o acesso no e-mail logo depois do pagamento e abre no celular.</p>
+      </section>
+
+      <div class="price">
+        <p>O guia completo</p>
+        <div class="amount">R$ 19,90</div>
+        <p>Menos de R$ 0,67 por dia de oração</p>
+        <a class="btn" href="#comprar" data-buy>Começar ainda hoje</a>
+        <p class="hint">Garantia de 7 dias: se não for para você, devolvemos seu dinheiro. É só escrever para <a href="mailto:apoio.armaduradamae@outlook.com">apoio.armaduradamae@outlook.com</a>.</p>
+      </div>
+
+      <section>
+        <h2>Perguntas</h2>
+        <div class="faq">
+          <details><summary>Preciso imprimir?</summary><p>Não. Você abre no celular, onde estiver. Se preferir no papel, também dá para imprimir.</p></details>
+          <details><summary>Serve para mais de um filho?</summary><p>Sim. Você reza o mesmo dia por cada um, dizendo o nome de cada filho.</p></details>
+          <details><summary>E se o meu filho já não vai à missa?</summary><p>É justamente por ele que esta oração existe. Ele não precisa saber. Você reza por ele.</p></details>
+          <details><summary>Como recebo?</summary><p>Você recebe o acesso no e-mail logo após o pagamento. Abre no celular, no tablet ou no computador.</p></details>
+          <details><summary>E se o e-mail não chegar, ou eu quiser o dinheiro de volta?</summary><p>Veja primeiro a pasta de spam ou promoções. Se não estiver lá, ou se quiser usar a garantia de 7 dias, escreva para <a href="mailto:apoio.armaduradamae@outlook.com">apoio.armaduradamae@outlook.com</a> com o e-mail que você usou na compra. A gente responde e resolve.</p></details>
+        </div>
+      </section>
+
+      <p class="toast" id="toast" role="status"></p>
+    </div>
+  </div>
+</div>
+
+<div class="buybar" id="buybar" hidden>
+  <div class="inner">
+    <div><b>R$ 19,90</b>Guia de 30 dias</div>
+    <a class="btn" href="#comprar" data-buy>Começar hoje</a>
+  </div>
+</div>
+
+<script>
+// Trocar pelo link do checkout Cartpanda quando estiver criado.
+const CHECKOUT_URL = "https://nickecomm.mycartpanda.com/checkout/214139406:1?lang=pt-br";
+// Delay button: segundos até o botão aparecer (fim da VSL). Com o vídeo real ligado, o evento "ended" também libera.
+const REVEAL_AT_SECONDS = 198; // VSL BR (Dani): 213,6 s; "Clica no botão" começa aos 198,3 s
+
+const steps = [
+  { q: "Por quantos filhos você reza?", a: ["Um", "Dois", "Três ou mais"] },
+  { q: "Qual a idade deles?", a: ["Crianças", "Adolescentes", "Adultos", "Idades diferentes"] },
+  { q: "O que mais tira a sua paz em relação ao seu filho hoje?", a: ["Se afastou de Deus", "As más companhias", "Não conversa mais comigo", "Sair à noite"] },
+  { q: "Hoje, com que frequência você reza por eles?", a: ["Todos os dias", "Quando me lembro", "Só quando acontece alguma coisa"] },
+  { q: "Qual é o primeiro nome do seu filho ou filha?", name: true }
+];
+const worries = {
+  "Se afastou de Deus": "no caminho de volta à fé",
+  "As más companhias": "longe das más companhias",
+  "Não conversa mais comigo": "e de volta para perto de você",
+  "Sair à noite": "em cada saída à noite"
+};
+const answers = [];
+let i = 0;
+const $ = id => document.getElementById(id);
+// Rastros do funil: cada etapa dispara uma vez, para ver no Gestor de Eventos onde as pessoas saem.
+const MODO = (location.hash === "#direto" ? "direto" : "quiz") + "_br";
+const sent = {};
+function rastro(name) {
+  if (sent[name] || !window.fbq) return;
+  sent[name] = true;
+  fbq("trackCustom", name, { modo: MODO });
+}
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function render() {
+  const s = steps[i];
+  rastro("Quiz_P" + (i + 1));
+  $("kicker").textContent = "Pergunta " + (i + 1) + " de " + steps.length;
+  $("question").textContent = s.q;
+  $("back").hidden = i === 0;
+  $("steps").innerHTML = steps.map((_, k) => "<i" + (k <= i ? ' class="on"' : "") + "></i>").join("");
+  const box = $("options");
+  box.innerHTML = "";
+  $("nameForm").hidden = !s.name;
+  box.hidden = !!s.name;
+  if (s.name) { $("childName").focus(); return; }
+  s.a.forEach(text => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "opt" + (answers[i] === text ? " picked" : "");
+    b.innerHTML = '<span class="dot"></span><span></span>';
+    b.lastChild.textContent = text;
+    b.addEventListener("click", () => pick(b, text));
+    box.appendChild(b);
+  });
+}
+
+function go(next) {
+  const p = $("panel");
+  if (reduce) { next(); render(); return; }
+  p.classList.add("out");
+  setTimeout(() => { next(); render(); p.classList.remove("out"); }, 220);
+}
+
+function pick(btn, text) {
+  answers[i] = text;
+  [...$("options").children].forEach(o => o.classList.toggle("picked", o === btn));
+  setTimeout(() => go(() => { i++; }), reduce ? 0 : 260);
+}
+
+$("back").addEventListener("click", () => go(() => { i = Math.max(0, i - 1); }));
+$("childName").addEventListener("input", e => { $("nameBtn").disabled = !e.target.value.trim(); });
+
+$("nameForm").addEventListener("submit", e => {
+  e.preventDefault();
+  let n = $("childName").value.trim().replace(/\s+/g, " ");
+  if (!n) return;
+  n = n.charAt(0).toUpperCase() + n.slice(1);
+  answers[i] = n;
+  rastro("Quiz_Fim");
+  prepare(n);
+});
+
+function prepare(name) {
+  $("ask").hidden = true;
+  $("prep").hidden = false;
+  $("prepTitle").textContent = "Preparando a Armadura para " + name;
+  const w = { "Se afastou de Deus": "a volta à fé", "As más companhias": "as más companhias", "Não conversa mais comigo": "a relação de vocês", "Sair à noite": "as saídas à noite" }[answers[2]];
+  if (w) $("t1").textContent = "Escolhendo os versículos para " + w;
+  const ids = ["t1", "t2", "t3"];
+  const gap = reduce ? 300 : 800;
+  ids.forEach((id, k) => setTimeout(() => $(id).classList.add("done"), gap * (k + 1)));
+  setTimeout(() => showResult(name), gap * 4);
+}
+
+function showResult(name) {
+  document.body.classList.remove("night");
+  $("quiz").hidden = true;
+  $("result").hidden = false;
+  startReveal();
+  if (name) {
+    $("resTitle").textContent = "O guia para trazer " + name + " de volta para Jesus está pronto";
+    $("leafName").textContent = name;
+    const w = worries[answers[2]];
+    $("resSub").textContent = "30 dias rezando por " + name + (w ? ", " + w : "") + ". 5 minutos por manhã, no seu celular.";
+  }
+  window.scrollTo(0, 0);
+}
+
+let revealed = false;
+function reveal() {
+  if (revealed) return;
+  revealed = true;
+  fbq("track", "ViewContent");
+  rastro("Botao_Visivel");
+  $("wait").hidden = true;
+  ["heroBuy", "after", "buybar"].forEach(id => { $(id).hidden = false; $(id).classList.add("reveal"); });
+}
+function startReveal() {
+  // ?ver=1 libera logo, para testar a página.
+  if (/[?&]ver=1/.test(location.search)) { reveal(); return; }
+  const video = document.querySelector(".vsl video");
+  if (video) {
+    video.addEventListener("ended", reveal);
+    video.addEventListener("timeupdate", () => { if (video.currentTime >= REVEAL_AT_SECONDS) reveal(); });
+  } else {
+    setTimeout(reveal, REVEAL_AT_SECONDS * 1000);
+  }
+}
+
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-buy]");
+  if (!a) return;
+  fbq("trackCustom", "CliqueCheckout");
+  if (CHECKOUT_URL) { a.href = CHECKOUT_URL; a.target = "_blank"; return; }
+  e.preventDefault();
+  $("toast").textContent = "Aqui entra o link do checkout Cartpanda.";
+  $("toast").scrollIntoView({ block: "center", behavior: reduce ? "auto" : "smooth" });
+});
+
+
+// VSL: começa sem som (os celulares bloqueiam som automático); ao tocar, recomeça do início com som.
+const vsl = document.getElementById("vsl");
+document.getElementById("unmute").addEventListener("click", e => {
+  vsl.currentTime = 0; vsl.muted = false; vsl.play(); e.currentTarget.hidden = true;
+  rastro("VSL_Som");
+});
+// Retenção da VSL (com som): 10 s, 25%, 50%, 75% e fim.
+vsl.addEventListener("timeupdate", () => {
+  if (vsl.muted || !vsl.duration) return;
+  const t = vsl.currentTime, d = vsl.duration;
+  if (t >= 10) rastro("VSL_10s");
+  [25, 50, 75].forEach(p => { if (t >= d * p / 100) rastro("VSL_" + p); });
+});
+vsl.addEventListener("ended", () => { if (!vsl.muted) rastro("VSL_Fim"); });
+// Sem pausa: tocar no vídeo não pára, e se o browser o pausar (outra aba, chamada) retoma ao voltar.
+vsl.addEventListener("click", e => e.preventDefault());
+vsl.addEventListener("contextmenu", e => e.preventDefault());
+vsl.addEventListener("pause", () => { if (!vsl.ended && !document.hidden) vsl.play().catch(() => {}); });
+document.addEventListener("visibilitychange", () => { if (!document.hidden && !vsl.ended) vsl.play().catch(() => {}); });
+
+// Conjunto B da campanha: o link com #direto salta o quiz.
+rastro("Pagina_" + MODO);
+if (location.hash === "#direto") { showResult(""); } else { document.body.classList.add("night"); render(); }
+</script>
+
+<script type="text/javascript" src="https://assets.mycartpanda.com/cartx-ecomm-ui-assets/js/cpsales.js"></script>
