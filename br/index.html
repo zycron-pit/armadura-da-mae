@@ -473,7 +473,7 @@ document.addEventListener("click", e => {
   const a = e.target.closest("[data-buy]");
   if (!a) return;
   fbq("trackCustom", "CliqueCheckout");
-  if (CHECKOUT_URL) { a.href = CHECKOUT_URL; a.target = "_blank"; return; }
+  if (CHECKOUT_URL) { const q = location.search.slice(1); a.href = q ? CHECKOUT_URL + (CHECKOUT_URL.includes("?") ? "&" : "?") + q : CHECKOUT_URL; a.target = "_blank"; return; }   // ad UTMs/fbclid ride along so Cartpanda knows which ad sold
   e.preventDefault();
   $("toast").textContent = "Aqui entra o link do checkout Cartpanda.";
   $("toast").scrollIntoView({ block: "center", behavior: reduce ? "auto" : "smooth" });
